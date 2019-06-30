@@ -4,7 +4,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (_) in
-            let someInitializable: Initializable.Type = SomeViewController.self
+            let someInitializable: UIViewControllerInitializable.Type = SomeViewController.self
             
             self.present(someInitializable.init(), animated: true, completion: nil)
         }
@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
 }
 
-protocol Initializable: UIViewController {
+protocol Initializable {
     init()
 }
 
